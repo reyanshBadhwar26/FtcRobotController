@@ -11,7 +11,7 @@ import com.qualcomm.robotcore.hardware.Gyroscope;
 
 @TeleOp
 
-public class FullTeleOp extends LinearOpMode{
+public class MoveTele extends LinearOpMode{
 
     private DcMotor LBm;
     private DcMotor LFm;
@@ -52,26 +52,10 @@ public class FullTeleOp extends LinearOpMode{
         RFm = hardwareMap.get(DcMotor.class, "RFm");
         RBm.setDirection(DcMotor.Direction.REVERSE);
         RFm.setDirection(DcMotor.Direction.REVERSE);
-        //ArmInit
-        ArmMotor = hardwareMap.get(DcMotorEx.class, "ArmMotor");
-        ArmMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        //All ServosInit
-        leftClaw = hardwareMap.get(Servo.class, "leftClaw");
-        rightClaw = hardwareMap.get(Servo.class, "rightClaw");
-        drone = hardwareMap.get(Servo.class, "drone");
-        clawMov = hardwareMap.get(Servo.class, "claw");
 
         homeArmPosition = 0;
         targetPosition = 0;
         //count = 0;
-
-        //initializeClaw
-        leftClaw.setPosition(0.5);
-        rightClaw.setPosition(1);
-        sleep(100);
-        clawMov.setPosition(-0.7);
-
-
 
         waitForStart();
 
@@ -92,53 +76,6 @@ public class FullTeleOp extends LinearOpMode{
                 LBm.setPower(-LS);
                 RFm.setPower(RS);
                 RBm.setPower(RS);
-            }
-
-            // Code for Arm Starts Here
-            if (dropPixel){
-                targetPosition = -1400;
-                ArmMotor.setTargetPosition(targetPosition);
-                ArmMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-                ArmMotor.setPower(-0.5);
-                ArmMotor.setVelocity(800);
-            } else if (pickPixel){
-                ArmMotor.setTargetPosition(homeArmPosition);
-                ArmMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-                ArmMotor.setVelocity(1000);
-            }
-
-
-            //Code for Claw Starts Here
-
-            //CloseClaw
-            if(gamepad1.x){
-                leftClaw.setPosition(1);
-                rightClaw.setPosition(0.4);
-            }
-            //OpenClaw
-            else if(gamepad1.b){
-                leftClaw.setPosition(0.5);
-                rightClaw.setPosition(1);
-            }
-
-            //Code for moving the claw up/down
-
-            //Move up
-            if (gamepad1.dpad_up){
-                clawMov.setPosition(-1);
-            }
-            //Move down
-            else if (gamepad1.dpad_down ){
-                clawMov.setPosition(0.7);
-            }
-
-            //This Code is for the plane drone
-            //Start Button chosen to launch the plane because it is the hardest to hit by accident
-            if(gamepad1.options){
-                drone.setPosition(0.5);
-            }
-            else if (gamepad1.left_bumper){
-                drone.setPosition(-1);
             }
 
         }

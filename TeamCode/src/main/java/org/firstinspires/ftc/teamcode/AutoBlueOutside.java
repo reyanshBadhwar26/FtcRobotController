@@ -25,6 +25,21 @@ public class AutoBlueOutside extends LinearOpMode {
     private Servo claw;
     private DcMotorEx ArmMotor;
 
+    public void shuffleLeft(int ms){
+        LFm.setPower(-0.5);
+        LBm.setPower(0.5);
+        RFm.setPower(0.5);
+        RBm.setPower(-0.5);
+        sleep(ms);
+    }
+
+    public void shuffleRight(int ms){
+        LFm.setPower(0.5);
+        LBm.setPower(-0.5);
+        RFm.setPower(-0.5);
+        RBm.setPower(0.5);
+        sleep(ms);
+    }
     @Override
     public void runOpMode() {
         rightCsf = hardwareMap.get(ColorSensor.class, "rightSensor");
@@ -33,6 +48,8 @@ public class AutoBlueOutside extends LinearOpMode {
         LFm = hardwareMap.get(DcMotor.class, "LFm");
         RBm = hardwareMap.get(DcMotor.class, "RBm");
         LBm = hardwareMap.get(DcMotor.class, "LBm");
+        RBm.setDirection(DcMotor.Direction.REVERSE);
+        RFm.setDirection(DcMotor.Direction.REVERSE);
         leftClaw = hardwareMap.get(Servo.class, "leftClaw");
         rightClaw = hardwareMap.get(Servo.class, "rightClaw");
         claw = hardwareMap.get(Servo.class, "claw");
