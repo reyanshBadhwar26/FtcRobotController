@@ -12,7 +12,7 @@ import com.qualcomm.robotcore.hardware.DistanceSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 @Autonomous
-public class AutoBlue extends LinearOpMode {
+public class AutoRed extends LinearOpMode {
 
     private ColorSensor rightCsf;
     private ColorSensor leftCsf;
@@ -174,21 +174,21 @@ public class AutoBlue extends LinearOpMode {
             //CheckRight First
             boolean foundRight = false;
             for (int i = 0; i < 50; i ++){
-                if (rightCsf.blue() > rightCsf.green() && rightCsf.blue() > rightCsf.red()){
+                if (rightCsf.red() > rightCsf.green() && rightCsf.red() > rightCsf.blue()){
                     foundRight = true;
                 }
             }
             moveForward(100);
             stop(300);
             for (int i = 0; i < 50; i ++){
-                if (rightCsf.blue() > rightCsf.green() && rightCsf.blue() > rightCsf.red()){
+                if (rightCsf.red() > rightCsf.green() && rightCsf.red() > rightCsf.blue()){
                     foundRight = true;
                 }
             }
             moveBackward(100);
             stop(300);
             for (int i = 0; i < 50; i ++){
-                if (rightCsf.blue() > rightCsf.green() && rightCsf.blue() > rightCsf.red()){
+                if (rightCsf.red() > rightCsf.green() && rightCsf.red() > rightCsf.blue()){
                     foundRight = true;
                 }
             }
@@ -209,21 +209,21 @@ public class AutoBlue extends LinearOpMode {
                 stop(500);
                 boolean foundLeft = false;
                 for (int i = 0; i < 50; i ++){
-                    if (leftCsf.blue() > leftCsf.green() && leftCsf.blue() > leftCsf.red()){
+                    if (leftCsf.red() > leftCsf.green() && leftCsf.red() > leftCsf.blue()){
                         foundLeft = true;
                     }
                 }
                 moveForward(100);
                 stop(300);
                 for (int i = 0; i < 50; i ++){
-                    if (leftCsf.blue() > leftCsf.green() && leftCsf.blue() > leftCsf.red()){
+                    if (leftCsf.red() > leftCsf.green() && leftCsf.red() > leftCsf.blue()){
                         foundLeft = true;
                     }
                 }
                 moveBackward(100);
                 stop(300);
                 for (int i = 0; i < 50; i ++){
-                    if (leftCsf.blue() > leftCsf.green() && leftCsf.blue() > leftCsf.red()){
+                    if (leftCsf.red() > leftCsf.green() && leftCsf.red() > leftCsf.blue()){
                         foundLeft = true;
                     }
                 }
