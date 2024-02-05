@@ -31,10 +31,10 @@ public class AutoBlue extends LinearOpMode {
         RFm.setPower(0.5);
         RBm.setPower(-0.5);
 
-        LFm.setTargetPosition(-pos);
-        LBm.setTargetPosition(pos);
-        RFm.setTargetPosition(pos);
-        RBm.setTargetPosition(-pos);
+        LFm.setTargetPosition(LFm.getCurrentPosition() - pos);
+        LBm.setTargetPosition(LBm.getCurrentPosition() + pos);
+        RFm.setTargetPosition(RFm.getCurrentPosition() + pos);
+        RBm.setTargetPosition(RBm.getCurrentPosition() - pos);
 
         LFm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         LBm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
@@ -48,10 +48,10 @@ public class AutoBlue extends LinearOpMode {
         RFm.setPower(-0.5);
         RBm.setPower(0.5);
 
-        LFm.setTargetPosition(pos);
-        LBm.setTargetPosition(-pos);
-        RFm.setTargetPosition(-pos);
-        RBm.setTargetPosition(pos);
+        LFm.setTargetPosition(LFm.getCurrentPosition() + pos);
+        LBm.setTargetPosition(LBm.getCurrentPosition() -pos);
+        RFm.setTargetPosition(RFm.getCurrentPosition() -pos);
+        RBm.setTargetPosition(RBm.getCurrentPosition()+ pos);
 
         LFm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         LBm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
@@ -65,10 +65,10 @@ public class AutoBlue extends LinearOpMode {
         RBm.setPower(1);
         LBm.setPower(1);
 
-        LFm.setTargetPosition(pos);
-        LBm.setTargetPosition(pos);
-        RFm.setTargetPosition(pos);
-        RBm.setTargetPosition(pos);
+        LFm.setTargetPosition(LFm.getCurrentPosition() + pos);
+        LBm.setTargetPosition(LBm.getCurrentPosition() + pos);
+        RFm.setTargetPosition(RFm.getCurrentPosition() + pos);
+        RBm.setTargetPosition(RBm.getCurrentPosition() + pos);
 
         LFm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         LBm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
@@ -82,10 +82,10 @@ public class AutoBlue extends LinearOpMode {
         RBm.setPower(-1);
         LBm.setPower(-1);
 
-        LFm.setTargetPosition(-pos);
-        LBm.setTargetPosition(-pos);
-        RFm.setTargetPosition(-pos);
-        RBm.setTargetPosition(-pos);
+        LFm.setTargetPosition(LFm.getCurrentPosition() -pos);
+        LBm.setTargetPosition(LBm.getCurrentPosition() -pos);
+        RFm.setTargetPosition(RFm.getCurrentPosition() -pos);
+        RBm.setTargetPosition(RBm.getCurrentPosition() -pos);
 
         LFm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         LBm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
@@ -107,10 +107,10 @@ public class AutoBlue extends LinearOpMode {
         RBm.setPower(-1);
         LBm.setPower(1);
 
-        LFm.setTargetPosition(pos);
-        LBm.setTargetPosition(pos);
-        RFm.setTargetPosition(-pos);
-        RBm.setTargetPosition(-pos);
+        LFm.setTargetPosition(LFm.getCurrentPosition() + pos);
+        LBm.setTargetPosition(LBm.getCurrentPosition() + pos);
+        RFm.setTargetPosition(RFm.getCurrentPosition() -pos);
+        RBm.setTargetPosition(RBm.getCurrentPosition() -pos);
 
         LFm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         LBm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
@@ -124,10 +124,10 @@ public class AutoBlue extends LinearOpMode {
         RBm.setPower(1);
         LBm.setPower(-1);
 
-        LFm.setTargetPosition(-pos);
-        LBm.setTargetPosition(-pos);
-        RFm.setTargetPosition(pos);
-        RBm.setTargetPosition(pos);
+        LFm.setTargetPosition(LFm.getCurrentPosition() -pos);
+        LBm.setTargetPosition(LBm.getCurrentPosition() -pos);
+        RFm.setTargetPosition(RFm.getCurrentPosition() + pos);
+        RBm.setTargetPosition(RBm.getCurrentPosition() + pos);
 
         LFm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         LBm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
